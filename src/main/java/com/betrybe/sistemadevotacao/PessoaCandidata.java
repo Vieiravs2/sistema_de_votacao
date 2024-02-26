@@ -11,14 +11,6 @@ public class PessoaCandidata extends Pessoa {
    * Inicial.
    */
   public PessoaCandidata(String nome, int numero) {
-    if (nome.isEmpty()) {
-      throw new IllegalArgumentException("O nome não pode ser nulo ou vazio.");
-    }
-
-    if (numero <= 0) {
-      throw new IllegalArgumentException("O número deve ser um valor positivo.");
-    }
-
     this.nome = nome;
     this.numero = numero;
     this.votos = 0;
@@ -29,10 +21,6 @@ public class PessoaCandidata extends Pessoa {
    */
 
   public void setNumero(int numero) {
-    if (numero <= 0) {
-      throw new IllegalArgumentException("O número deve ser um valor positivo.");
-    }
-
     this.numero = numero;
   }
 
@@ -40,10 +28,6 @@ public class PessoaCandidata extends Pessoa {
    * Setters e Getters.
    */
   public void setVotos(int votos) {
-    if (votos < 0) {
-      throw new IllegalArgumentException("O número de votos não pode ser negativo.");
-    }
-
     this.votos = votos;
   }
 
@@ -58,5 +42,13 @@ public class PessoaCandidata extends Pessoa {
 
   public void receberVoto() {
     this.votos = this.votos + 1;
+  }
+
+  public String getNome() {
+    return super.getNome();
+  }
+
+  public void setNome(String nome) {
+    super.setNome(nome);
   }
 }
